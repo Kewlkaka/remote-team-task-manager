@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&family=Oxygen+Mono&family=Poppins:wght@800&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/signupStyle.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Sign up -TaskIt</title>
+</head> <!--Reyans-->
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <ul>
+                <li>
+                    <h1>
+                        <a href="index.html">
+                            <span class="fa-solid fa-code aria-hidden=" true"></span>
+                            <span>TaskIt</span>
+                        </a> <!--Reyans-->
+                    </h1>
+                </li>
+                <li>
+                    <a href="about.html">
+                        About us
+                    </a>
+                </li>
+                <li>
+                    <a href="/create-account/signup">
+                        Create Account
+                    </a> <!--Reyans-->
+                </li>
+                <li>
+                    <a href="login.html">
+                        Log In
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="signup_container">
+        <div class="signup">
+            <h2 class="signupHeading">
+                Sign up on TaskIt
+            </h2>
+            <form id="signup-form">
+                <div class="Prompt">
+                    <p>Enter your email:</p>
+                </div> <!--Reyans-->
+
+                <div class="input-container">
+                    <input type="text" id="email" name="email" required>
+                    <label for="email">Email</label>
+                    <span class="bar"></span>
+                </div>
+
+                <div class="Tips">
+                    <p>We suggest the one you use for work</p>
+                </div> <!--Reyans-->
+
+                <div class="Prompt">
+                    <p>Enter your Password:</p>
+                </div>
+
+                <div class="input-container">
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password</label>
+                    <span class="bar"></span>
+                </div> <!--Reyans-->
+
+                <div class="Tips">
+                    <p>Password must be atleast 8 characters long, with atleast 1 uppercase letter and a digit</p>
+                </div> <!--Reyans-->
+
+                <div class="Prompt">
+                    <p>Enter your Username:</p>
+                </div>
+
+                <div class="input-container">
+                    <input type="text" id="username" name="username" required>
+                    <label for="username">Username</label>
+                    <span class="bar"></span>
+                </div> <!--Reyans-->
+
+                <div class="Tips">
+                    <p>Try using your company name or a nickname you have</p>
+                </div>
+
+                <!---->
+
+                <div class="Prompt">
+                    <p>Enter your Organizations name:</p>
+                </div>
+
+
+                <div class="input-container">
+                    <input type="text" id="orgName" name="org" required>
+                    <label for="orgName" id="companyAcc">ABC and Co</label>
+                    <span class="bar"></span>
+                </div>
+
+                <div class="Prompt">
+                    <p>Enter Company Website(optional):</p>
+                </div>
+
+
+                <div class="input-container">
+                    <input type="text" id="website" name="websiteName" required>
+                    <label for="website" id="orgWebsite">example.com</label>
+                    <span class="bar"></span>
+                </div>
+
+                <div class="Prompt">
+                    <p>Organization Industry:</p>
+                </div>
+
+
+                <div class="input-container">
+                    <input type="text" id="industry" name="industryName" required>
+                    <label for="industry" id="orgIndustry">Software House</label>
+                    <span class="bar"></span>
+                </div>
+
+                <div id="errorMessage">
+                    <p id="successMessage" style="color: green;"></p>
+                </div>
+
+
+
+                <button id="signup" type="submit">Sign Up</button>
+            </form>
+            <div class="signup-link">
+                Already a TaskIt user? <a href="signup.html">Sign in Here.</a>
+            </div>
+        </div>
+    </div>
+    <script src="/js/userSignup.js"></script>
+</body>
+
+</html>

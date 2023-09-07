@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:wght@300&family=REM&family=Raleway&family=Rubik:wght@500&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bd1de80752.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/dashboardStyle.css" class="stylesheet">
+    <link rel="stylesheet" href="/css/dashboardResponsive.css" class="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@^3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@^1"></script>
+    <title>TaskIt-DashBoard</title>
+</head>
+
+<body>
+    <!--Nav Bar Header-->
+    <header>
+        <div class="navLogoSec">
+            <i id="menuicn" class="fa-solid fa-bars"></i>
+            <div class="logo">TaskIt</div>
+        </div>
+
+        <div class="message">
+            <p class="FAQ">FAQ</p>
+            <div class="dp">
+                <img src="/img/employeeAliceResized.png" class="dpIcn" alt="dp">
+            </div>
+        </div>
+    </header>
+
+    <!--Nav/Sidebar-->
+    <div class="main-container">
+        <div class="navcontainer navclose">
+            <nav class="navs">
+                <div class="nav-upper-options">
+                    <div class="nav-option option1" id="option1">
+                        <i id="nav-img" class="fa-solid fa-house-user iconOpen"></i>
+                        <h3>Dashboard</h3>
+                    </div>
+
+                    <div class="nav-option option2" id="option2">
+                        <i id="nav-img" class="fa-solid fa-user iconOpen"></i>
+                        <h3>Profile</h3>
+                    </div>
+
+                    <div class="nav-option option3" id="option3">
+                        <i id="nav-img" class="fa-solid fa-diagram-project iconOpen"></i>
+                        <h3>Projects</h3>
+                    </div>
+
+                    <div class=nav-option option-4" id="option4">
+                        <i id="nav-img" class="fa-solid fa-rectangle-list iconOpen"></i>
+                        <h3>Tasks</h3>
+                    </div>
+
+                    <div class="nav-option option5" id="option5">
+                        <i id="nav-img" class="fa-solid fa-people-group iconOpen"></i>
+                        <h3>Team</h3>
+                    </div>
+                    <!--Reyans-->
+                    <div class="nav-option option6" id="option6">
+                        <i id="nav-img" class="fa-solid fa-message iconOpen"></i>
+                        <h3>Chat</h3>
+                    </div>
+
+                    <div class="nav-option option7" id="option7">
+                        <i id="nav-img" class="fa-solid fa-right-from-bracket iconOpen"></i>
+                        <h3>Logout</h3>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="main">
+            <h1 class="welcomeHeading">Welcome to your Dashboard, <%= user1.user.username %>.</h1>
+            <div class="box-container">
+                <div class="box box1">
+                    <div class="text">
+                        <h2 class="tasksPendingStat">0</h2>
+                        <h2 class="tasksPendingHeading">Tasks Pending</h2>
+                    </div>
+                    <i id="img1" class="fa-solid fa-bars-progress icon-tasksPending"></i>
+                </div>
+
+                <div class="box box2">
+                    <div class="text">
+                        <h2 class="tasksCompletedStat">0</h2>
+                        <h2 class="tasksCompletedHeading">Tasks Completed</h2>
+                    </div>
+                    <i id="img2" class="fa-solid fa-list-check icon-tasksCompleted"></i>
+                </div>
+
+                <div class="box box3">
+                    <div class="text">
+                        <h2 class="notificationsStat">0</h2>
+                        <h2 class="notificationsHeading">Notifications</h2>
+                    </div>
+                    <i id="img3" class="fa-solid fa-bell icon-unreadNotifications"></i>
+                </div>
+
+                <div class="box box4">
+                    <div class="text">
+                        <h2 class="chatsStat">0</h2>
+                        <h2 class="chatsHeading">Chats</h2>
+                    </div>
+                    <i id="img4" class="fa-solid fa-comment icon-unreadChats"></i>
+                </div>
+            </div>
+
+            <div class="row2">
+                <div class="important-announcements">
+                    <div class="announceHeading">
+                        <h1 class="announcement-heading">Important Announcements</h1>
+                        <i id="plus" class="fa-solid fa-plus"></i>
+                    </div>
+                    <div class="announcement-content" id="announcement-content">
+                        <div class="announcement-card">
+                            <div class="cardHeading">
+                                <h2 class="announcement-title">New Feature Launch</h2>
+                                <i class="fa-solid fa-trash"></i>
+                            </div>
+                            <p class="announcement-text">We're excited to announce a new feature that will enhance your
+                                task management experience.</p>
+                            <span class="announcement-date">August 25, 2023</span>
+                        </div>
+                        <div class="announcement-card">
+                            <div class="cardHeading">
+                                <h2 class="announcement-title">Maintenance Notice</h2>
+                                <i class="fa-solid fa-trash"></i>
+                            </div>
+                            <p class="announcement-text">Our system will undergo maintenance on August 28, 2023. Expect
+                                brief downtime during this period.</p>
+                            <span class="announcement-date">August 20, 2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="homeCharts">
+                    <div class="homesection-chart">
+                        <h2 class="taskCompletionChart-heading">Task Completion</h2>
+                        <canvas id="taskCompletionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div id="announcementModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Create New Announcement</h2>
+                    <form id="announcementForm">
+                        <label for="announcementText">Enter something important!</label>
+                        <textarea id="announcementTitle" name="announcementTitle" rows="1" required></textarea>
+                        <textarea id="announcementText" name="announcementText" rows="4" required></textarea>
+                        <button type="submit" class="btn-save">Save</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="report-container">
+                <div class="report-header">
+                    <h1 class="top-collaborators">Top Collaborators</h1>
+                    <button class="view">View All</button>
+                </div>
+
+                <div class="report-body">
+                    <div class="report-topic-heading">
+                        <h3 class="t-op">Employee</h3>
+                        <h3 class="t-op">Tasks Completed</h3>
+                    </div>
+
+                    <div class="items">
+                        <div class="item1">
+                            <h3 class="t-op-nextlvl">John Doe</h3>
+                            <h3 class="t-op-nextlvl">15</h3>
+                        </div>
+
+                        <div class="item1">
+                            <h3 class="t-op-nextlvl">Sarah</h3>
+                            <h3 class="t-op-nextlvl">10</h3>
+                        </div>
+
+                        <div class="item1">
+                            <h3 class="t-op-nextlvl">Jacob</h3>
+                            <h3 class="t-op-nextlvl">8</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+
+</html>

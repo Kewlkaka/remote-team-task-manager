@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" /> <!--Reyans-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&family=Oxygen+Mono&family=Poppins:wght@800&display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/loginStyle.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Login -TaskIt</title>
+</head>
+<!--Reyans-->
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <ul>
+                <li>
+                    <h1>
+                        <a href="index.html">
+                            <span class="fa-solid fa-code aria-hidden=" true"></span>
+                            <span>TaskIt</span>
+                        </a> <!--Reyans-->
+                    </h1>
+                </li>
+                <li>
+                    <a href="about.html">
+                        About us
+                    </a>
+                </li>
+                <li>
+                    <a href="/create-account/signup">
+                        Create Account
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html">
+                        Log In
+                    </a> <!--Reyans-->
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="gradient"></div>
+    <!--reyanscode-->
+    <div class="login_container">
+        <div class="login">
+            <h2 class="loginHeading">
+                Sign in to TaskIt
+            </h2> <!--Reyans-->
+            <form id="login-form">
+                <div class="input-container">
+                    <input type="text" id="email" required>
+                    <label for="email">Email</label>
+                    <span class="bar"></span>
+                </div> <!--Reyans-->
+                <div class="input-container">
+                    <input type="password" id="password" required>
+                    <label for="password">Password</label>
+                    <span class="bar"></span>
+                </div> <!--Reyans-->
+                <button id="signin" type="submit">Sign In</button>
+            </form>
+            <div class="signup-link">
+                New to TaskIt? <a href="signup.html">Sign Up Here.</a>
+            </div>
+        </div> <!--Reyans-->
+    </div>
+    <script src="/js/userLogin.js"></script>
+</body>
+
+</html>

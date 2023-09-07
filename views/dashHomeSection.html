@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/bd1de80752.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/public/css/dashHomeStyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:wght@300&family=REM&family=Raleway&family=Rubik:wght@500&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@^3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@^1"></script>
+    <title>TaskIt-Dashboard</title>
+</head>
+
+<body>
+
+    <div class="homeSection">
+        <h1 class="welcome">Welcome to your Dashboard, Jacob</h1>
+        <div class="homesection-cards">
+            <div class="tasksPending-card">
+                <h1><i class="fa-solid fa-bars-progress icon-tasksPending"></i></h1>
+                <h3 class="tasksPendingStats">0</h3>
+                <p class="tasksPending-heading">Tasks Pending</p>
+            </div>
+            <div class="tasksCompleted-card">
+                <h1><i class="fa-solid fa-list-check icon-tasksCompleted"></i></h1>
+                <h3 class="tasksCompletedStats">0</h3>
+                <p class="tasksCompleted-heading">Tasks Completed</p>
+            </div>
+            <div class="unreadNotifications-card">
+                <h1><i class="fa-solid fa-bell icon-unreadNotifications"></i></h1>
+                <h3 class="unreadNotificationsStats">0</h3>
+                <p class="unreadNotifications-heading">Notifications</p>
+            </div>
+            <div class="unreadChats-card">
+                <h1><i class="fa-solid fa-comment icon-unreadChats"></i></h1>
+                <h3 class="unreadChatsStats">0</h3>
+                <p class="unreadChats-heading">Chats</p>
+            </div>
+        </div>
+        <div class="row2">
+            <div class="homeCharts">
+                <div class="homesection-chart">
+                    <h2 class="taskCompletionChart-heading">Task Completion</h2>
+                    <canvas id="taskCompletionChart"></canvas>
+                </div>
+            </div>
+            <div class="announcement-sidebar">
+                <div class="announcement-card">
+                    <h3>Important Announcement</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit....</p>
+                    <a href="#" class="read-more-btn">Read More</a>
+                </div>
+                <div class="announcement-card">
+                    <h3>Important Announcement 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit....</p>
+                    <a href="#" class="read-more-btn">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="row3">
+            <div class="top-collaborators">
+                <h2 class="topCollaborators-heading">Top Collaborators</h2>
+                <table class="collaborator-table">
+                    <thead>
+                        <tr>
+                            <th class="userField-heading">Name</th>
+                            <th class="tasksField-heading">Tasks Completed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="collaborator">
+                            <td class="info">
+                                <img src="collaborator1.jpg" alt="Collaborator 1">
+                                <p class="name">John Doe</p>
+                            </td>
+                            <td class="tasks-completed">
+                                <p>15</p>
+                            </td>
+                        </tr>
+                        <tr class="collaborator">
+                            <td class="info">
+                                <img src="collaborator2.jpg" alt="Collaborator 2">
+                                <p class="name">Sarah</p>
+                            </td>
+                            <td class="tasks-completed">
+                                <p>10</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="/public/js/dashboard.js"></script>
+</body>
+
+</html>

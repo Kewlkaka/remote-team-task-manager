@@ -1,0 +1,655 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:wght@300&family=REM&family=Raleway&family=Rubik:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-image: url("/public/img/dashboardBG.png");
+    background-position: center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    height: 80px;
+    background: #1b1b1b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 50px 0px 100px;
+    flex-wrap: wrap;
+}
+
+nav .logo {
+    font-size: 33px;
+    color: #fff;
+    font-weight: 600;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 5px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #1b1b1b;
+    background: #fff;
+}
+
+nav .menu-btn i {
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    display: none;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+nav ul li .search-input {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #fff;
+    transition: all 0.3s ease;
+    width: 0;
+    overflow: hidden;
+}
+
+nav ul li .search-input.active {
+    width: 150px;
+    padding: 8px 10px 8px 20px;
+}
+
+nav .user-profile {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+nav .user-profile img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+nav .profile-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+}
+
+nav .user-profile:hover .profile-dropdown {
+    display: flex;
+}
+
+nav .profile-dropdown a {
+    padding: 8px 10px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+nav .profile-dropdown a:hover {
+    background-color: #f0f0f0;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    /* Center-align items vertically */
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 5px;
+}
+
+/*Sidebar*/
+
+.sidebar {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 110px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(17px);
+    --webkit-backdrop-filter: blur(17px);
+    border-right: 1px solid rgba(255, 255, 255, 0.7);
+    transition: width 0.3s ease;
+}
+
+.sidebar:hover {
+    width: 260px;
+}
+
+.sidebar .logo {
+    color: #000;
+    display: flex;
+    align-items: center;
+    padding: 25px 10px 15px;
+}
+
+.logo img {
+    width: 43px;
+    border-radius: 50%;
+}
+
+.logo h2 {
+    font-size: 2.15rem;
+    font-weight: 600;
+    margin-left: 15px;
+    display: none;
+}
+
+.sidebar:hover .logo h2 {
+    display: block;
+}
+
+.sidebar .links {
+    list-style: none;
+    margin-top: 20px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    height: calc(100% - 140px);
+}
+
+.sidebar .links::-webkit-scrollbar {
+    display: none;
+}
+
+.links li {
+    display: flex;
+    border-radius: 4px;
+    align-items: center;
+}
+
+.links li:hover {
+    cursor: pointer;
+    background: #fff;
+}
+
+.links h4 {
+    color: #222;
+    font-weight: 500;
+    display: none;
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+
+.sidebar:hover .links h4 {
+    display: block;
+}
+
+.links hr {
+    margin: 10px 8px;
+    border: 1px solid #4c4c4c;
+}
+
+.sidebar:hover .links hr {
+    border-color: transparent;
+}
+
+.links li span {
+    padding: 12px 10px;
+    padding-left: 10px;
+    font-size: 30px;
+}
+
+.links li a {
+    font-size: 20px;
+    padding: 10px;
+    color: #000;
+    display: none;
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.sidebar:hover .links li a {
+    display: block;
+}
+
+.links .logout-link {
+    margin-top: 20px;
+}
+
+@media (max-width: 1000px) {
+    nav {
+        padding: 0 40px 0 50px;
+    }
+}
+
+@media (max-width: 920px) {
+    nav .menu-btn i {
+        display: block;
+    }
+
+    #click:checked~.menu-btn i:before {
+        content: "\f00d";
+    }
+
+    nav ul {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        background: #111;
+        height: 100vh;
+        width: 100%;
+        display: block;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    #click:checked~ul {
+        left: 0%;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin: 40px 0;
+    }
+
+    nav ul li a {
+        width: 100%;
+        margin-left: -100%;
+        font-size: 20px;
+        display: block;
+        transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    #click:checked~ul li a {
+        margin-left: 0px;
+    }
+
+    nav ul li a:hover {
+        color: cyan;
+        background: none;
+    }
+}
+
+/*Dashboard- HomeSection*/
+
+.homeSection {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.welcome {
+    margin-left: 54px;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+/*Cards Setup*/
+.homesection-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    margin-top: 0;
+}
+
+.tasksCompleted-card {
+    border-radius: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #D0F2FC;
+    /*background: rgb(246, 222, 222);
+    background: linear-gradient(90deg, rgba(246, 222, 222, 1) 0%, rgba(255, 247, 210, 1) 49%, rgba(255, 246, 205, 1) 100%);*/
+    display: flex;
+    width: 330px;
+    height: 350px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.icon-tasksCompleted {
+    font-size: 55px;
+    border-radius: 50%;
+    background: rgb(253, 242, 204);
+    background: rgb(187, 227, 246);
+    background: linear-gradient(90deg, rgba(187, 227, 246, 1) 0%, rgba(181, 222, 244, 1) 58%, rgba(177, 213, 245, 1) 100%);
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tasksCompletedStats {
+    font-family: Rubik, sans-serif;
+    color: #0B2A78;
+    font-size: 70px;
+    font-weight: 100;
+}
+
+.tasksCompleted-heading {
+    font-family: Nunito, sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    color: #5D84AF;
+}
+
+/*Tasks Pending Card*/
+.tasksPending-card {
+    border-radius: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #D2E8FD;
+    display: flex;
+    width: 330px;
+    height: 350px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.icon-tasksPending {
+    font-size: 55px;
+    border-radius: 50%;
+    background: rgb(253, 242, 204);
+    background: rgb(187, 227, 246);
+    background: linear-gradient(90deg, rgba(187, 227, 246, 1) 0%, rgba(181, 222, 244, 1) 58%, rgba(177, 213, 245, 1) 100%);
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tasksPendingStats {
+    font-family: Rubik, sans-serif;
+    color: #0B267C;
+    font-size: 70px;
+    font-weight: 100;
+}
+
+.tasksPending-heading {
+    font-family: Nunito, sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    color: #4A6E9D;
+}
+
+/*Notifications*/
+
+.unreadNotifications-card {
+    border-radius: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #FFF6CD;
+    /*background: rgb(246, 222, 222);
+    background: linear-gradient(90deg, rgba(246, 222, 222, 1) 0%, rgba(255, 247, 210, 1) 49%, rgba(255, 246, 205, 1) 100%);*/
+    display: flex;
+    width: 330px;
+    height: 350px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.icon-unreadNotifications {
+    font-size: 55px;
+    border-radius: 50%;
+    background: rgb(253, 242, 204);
+    background: linear-gradient(90deg, rgba(253, 242, 204, 1) 0%, rgba(255, 239, 187, 1) 35%, rgba(241, 228, 176, 1) 100%);
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.unreadNotificationsStats {
+    font-family: Rubik, sans-serif;
+    color: #7D5B1C;
+    font-size: 70px;
+    font-weight: 100;
+}
+
+.unreadNotifications-heading {
+    font-family: Nunito, sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    color: #A58F5C;
+}
+
+/*Unread Chats*/
+
+.unreadChats-card {
+    border-radius: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #FEE7D7;
+    display: flex;
+    width: 330px;
+    height: 350px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+
+.icon-unreadChats {
+    font-size: 55px;
+    border-radius: 50%;
+    background: rgb(250, 218, 205);
+    background: linear-gradient(90deg, rgba(250, 218, 205, 1) 0%, rgba(249, 211, 200, 1) 55%, rgba(243, 199, 190, 1) 100%);
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.unreadChatsStats {
+    font-family: Rubik, sans-serif;
+    color: #771A32;
+    font-size: 70px;
+    font-weight: 100;
+}
+
+.unreadChats-heading {
+    font-family: Nunito, sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    color: #B2676B;
+}
+
+/*Card Responsiveness */
+@media (max-width: 1200px) {
+    .homesection-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tasksCompleted-card,
+    .tasksPending-card,
+    .unreadNotifications-card,
+    .unreadChats-card {
+        width: 80%;
+        margin: 20px auto;
+    }
+
+    .icon-tasksCompleted,
+    .icon-tasksPending,
+    .icon-unreadNotifications,
+    .icon-unreadChats {
+        width: 70px;
+        height: 70px;
+        font-size: 40px;
+    }
+
+    .tasksCompletedStats,
+    .tasksPendingStats,
+    .unreadNotificationsStats,
+    .unreadChatsStats {
+        font-size: 40px;
+    }
+
+    .tasksCompleted-heading,
+    .tasksPending-heading,
+    .unreadNotifications-heading,
+    .unreadChats-heading {
+        font-size: 20px;
+    }
+}
+
+/* Row 2 */
+
+.row2 {
+    display: flex;
+    flex-direction: row;
+    height: 480px;
+    margin-bottom: 20px;
+}
+
+/* Charts */
+.homeCharts {
+    margin-left: 50px;
+}
+
+.homesection-chart {
+    width: 780px;
+    /* Adjust width as needed */
+    height: 480px;
+    /* Adjust height as needed */
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+/*Announcement Sidebar*/
+
+.announcement-sidebar {
+    width: 250px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    margin-left: 60px;
+    /* Align to the right of the graph */
+}
+
+.announcement-card {
+    margin-bottom: 20px;
+}
+
+/*Top Collaborators*/
+
+.top-collaborators {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    width: 1100px;
+    margin-left: 40px;
+}
+
+.collaborator-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.collaborator-table th,
+.collaborator-table td {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    /* Add a subtle divider */
+    text-align: left;
+    vertical-align: middle;
+    /* Vertically center content */
+}
+
+.userField-heading,
+.tasksField-heading {
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.collaborator img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.tasks-completed {
+    font-size: 20px;
+    text-align: right;
+    vertical-align: middle;
+    width: 100px;
+    padding-right: 10px;
+}
+
+
+/* Additional styling as needed */

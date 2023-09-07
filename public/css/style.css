@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=REM&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #171321;
+    --dkblue: #0d314b;
+    --plum: #4b0d49;
+    --hotmag: #ff17e4;
+    --magenta: #e310cb;
+    --aqua: #86fbfb;
+    --white: #f7f8fa;
+    --font-size: 1.3rem;
+    --mono: "Oxygen mono", monospace;
+    --sans: Oxygen, sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--sans);
+    color: var(--black);
+    font-size: var(--font-size);
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+header {
+    background-color: var(--black);
+}
+
+nav {
+    font-family: var(--mono);
+    font-size: 80%;
+    padding: 1rem;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    list-style-type: none;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+nav h1 a {
+    font-family: var(--sans);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+nav [class*="fa-"] {
+    font-size: 150%;
+    color: var(--aqua);
+}
+
+nav h1 [class*="fa-"] {
+    font-size: 100%;
+    color: var(--aqua);
+}
+
+nav li {
+    display: inline;
+    font-size: 20px;
+}
+
+nav li:first-child {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.intro_container {
+    background-color: #541554;
+}
+
+.div_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: row wrap;
+    margin-bottom: 180px;
+}
+
+.flex_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.image_left {
+    background-image: url('../img/introDivImgNoBg.png');
+    background-size: cover;
+    background-position: center;
+    margin-left: 50px;
+    height: 600px;
+    width: 1600px;
+}
+
+.welcomeHeading {
+    font-size: 80px;
+    font-family: 'REM', sans-serif;
+    line-height: -5pt;
+}
+
+
+.intro {
+    width: fit-content;
+    padding-right: 100px;
+    font-size: 20px;
+}
+
+
+
+.div_container h2,
+p {
+    text-align: left;
+    color: white;
+}
+
+.welcomeHeadingPart2 {
+    color: yellow;
+}
+
+.submit_email {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    align-items: center;
+}
+
+
+.btn.btn-primary.btn-lg {
+    font-family: var(--sans);
+    font-size: 15px;
+    margin-left: 7px;
+}
+
+/* Features */
+
+
+
+.mainBody_container {
+    background-color: #F3ECE4;
+    margin: 0;
+    margin-top: 0;
+}
+
+.bodyHeading {
+    margin-bottom: 90px;
+    font-family: var(--sans);
+}
+
+.bodyHeading h2 {
+    text-align: center;
+    font-size: 60px;
+    padding: 30px;
+}
+
+
+.div_img_container {
+    display: flex;
+    column-gap: 100px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.div_img_container_reverse {
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: 100px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.text {
+    margin-left: 300px;
+}
+
+.blackbox {
+    color: var(--black);
+    font-size: 25px;
+}
+
+.team1img img {
+    margin-right: 300px;
+    border-left: 1px solid var(--aqua);
+    border-top: 1px solid var(--aqua);
+    border-radius: 25px;
+}
+
+.text {
+    margin-right: 100px;
+}
+
+.team1img_reverse img {
+    margin-left: 300px;
+    border-left: 1px solid var(--aqua);
+    border-top: 1px solid var(--aqua);
+    border-radius: 25px;
+}
+
+.teamUnityHeading {
+    font-family: var(--sans);
+    font-size: 80px;
+}
+
+
+
+.gradient {
+    background: linear-gradient(90deg, rgba(255, 23, 228, 1) 0%, rgba(134, 251, 251, 1) 68%);
+    height: 3px;
+    margin: 0;
+}
+
+
+
+
+/* Stats */
+.stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+    padding: 90px;
+    margin-bottom: 90px;
+}
+
+.organizedStat h3 {
+    font-family: Slack-Larsseit, "Helvetica Neue", Helvetica, "Segoe UI", Tahoma, Arial, sans-serif;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: normal;
+    font-size: 6rem;
+    color: #611f69;
+    white-space: nowrap;
+    display: inline-block;
+    margin-bottom: 0.25rem
+}
+
+.organizedStat p {
+    color: var(--black);
+    font-family: Slack-Circular-Pro, "Helvetica Neue", Helvetica, "Segoe UI", Tahoma, Arial, sans-serif;
+    line-height: 1.4286;
+    letter-spacing: normal;
+}
+
+/*User Reviews*/
+.user_testimony {
+    font-style: italic;
+    font-size: 40px;
+    margin-right: 100px;
+}
+
+.user_testimony p {
+    color: #171321;
+}
+
+
+.testimony {
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+    padding: 20px;
+}
+
+.testimony_reverse {
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: 30px;
+    align-items: center;
+    padding: 20px;
+}
+
+.user_testimony_reverse {
+    font-style: italic;
+    font-size: 40px;
+    margin-left: 100px;
+}
+
+.user_testimony_reverse p {
+    color: #171321;
+}
+
+.userImage_reverse {
+    margin-right: 80px;
+}
+
+.userImage {
+    margin-left: 80px;
+}
+
+.testimonyBodyHeader {
+    margin-bottom: 90px;
+    font-family: var(--sans);
+    text-align: center;
+}
+
+.testimonyBodyHeader h2 {
+    text-align: center;
+    font-size: 60px;
+    padding: 30px;
+}
+
+.customerStories_container {
+    background-color: #FFFFFF;
+}
+
+@media (min-width: 850px) {
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    nav li:first-child {
+        flex-basis: auto;
+        text-align: left;
+        margin-right: auto;
+    }
+
+}
+
+
+@media (min-width: 550px) {
+
+    .standard {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+
+    .reverse {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+
+    .div_container .image_left {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .div_container .intro {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .submit_email .form-control.form-control-lg {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .submit_email .btn.btn-primary.btn-lg {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}

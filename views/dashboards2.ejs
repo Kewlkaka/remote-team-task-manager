@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=REM&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <script src="https://kit.fontawesome.com/bd1de80752.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/dashboardStyle.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@^3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@^1"></script>
+    <title>TaskIt-Dashboard</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">TaskIt</div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li class="user-profile">
+                <a href="#"><img src="img/employeeAliceResized.png" alt="User Avatar"></a>
+                <div class="profile-dropdown">
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Logout</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="dashAndSideBar-flex-container">
+        <aside class="sidebar collapsed">
+            <div class="logo">
+                <h2>Taskit</h2>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul class="links">
+                <h4>Main Menu</h4>
+                <li>
+                    <span class="material-symbols-outlined">dashboard</span>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <span class="material-symbols-outlined">folder</span>
+                    <a href="#">Projects</a>
+                </li>
+                <li>
+                    <span class="material-symbols-outlined">task</span>
+                    <a href="#">Tasks</a>
+                </li>
+                <hr>
+                <h4>Team Collaboration</h4>
+                <li>
+                    <span class="material-symbols-outlined">people</span>
+                    <a href="#">Team</a>
+                </li>
+                <li>
+                    <span class="material-symbols-outlined">event</span>
+                    <a href="#">Calendar</a>
+                </li>
+                <hr>
+                <h4>Accounts and Settings</h4>
+                <li>
+                    <span class="material-symbols-outlined">account_circle</span>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <span class="material-symbols-outlined">mail</span>
+                    <a href="#">Messages</a>
+                </li>
+                <li>
+                    <span class="material-symbols-outlined">settings</span>
+                    <a href="#">Settings</a>
+                </li>
+                <li class="logout-link">
+                    <span class="material-symbols-outlined">logout</span>
+                    <a href="#">Logout</a>
+                </li>
+            </ul>
+        </aside>
+        <div class="userDashboard">
+            <h1 class="welcome">Welcome to your Dashboard, <%= user1.user.username %>
+            </h1>
+            <div class="homeSection">
+                <div class="homesection-cards">
+                    <div class="tasksPending-card">
+                        <h1><i class="fa-solid fa-bars-progress icon-tasksPending"></i></h1>
+                        <h3 class="tasksPendingStats">0</h3>
+                        <p class="tasksPending-heading">Tasks Pending</p>
+                    </div>
+                    <div class="tasksCompleted-card">
+                        <h1><i class="fa-solid fa-list-check icon-tasksCompleted"></i></h1>
+                        <h3 class="tasksCompletedStats">0</h3>
+                        <p class="tasksCompleted-heading">Tasks Completed</p>
+                    </div>
+                    <div class="unreadNotifications-card">
+                        <h1><i class="fa-solid fa-bell icon-unreadNotifications"></i></h1>
+                        <h3 class="unreadNotificationsStats">0</h3>
+                        <p class="unreadNotifications-heading">Notifications</p>
+                    </div>
+                    <div class="unreadChats-card">
+                        <h1><i class="fa-solid fa-comment icon-unreadChats"></i></h1>
+                        <h3 class="unreadChatsStats">0</h3>
+                        <p class="unreadChats-heading">Chats</p>
+                    </div>
+                </div>
+                <div class="row2">
+                    <div class="homeCharts">
+                        <div class="homesection-chart">
+                            <h2 class="taskCompletionChart-heading">Task Completion</h2>
+                            <canvas id="taskCompletionChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="announcement-sidebar">
+                        <div class="announcement-card">
+                            <h3>Important Announcement</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit....</p>
+                            <a href="#" class="read-more-btn">Read More</a>
+                        </div>
+                        <div class="announcement-card">
+                            <h3>Important Announcement 2</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit....</p>
+                            <a href="#" class="read-more-btn">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row3">
+                    <div class="top-collaborators">
+                        <h2 class="topCollaborators-heading">Top Collaborators</h2>
+                        <table class="collaborator-table">
+                            <thead>
+                                <tr>
+                                    <th class="userField-heading">Name</th>
+                                    <th class="tasksField-heading">Tasks Completed</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="collaborator">
+                                    <td class="info">
+                                        <img src="collaborator1.jpg" alt="Collaborator 1">
+                                        <p class="name">John Doe</p>
+                                    </td>
+                                    <td class="tasks-completed">
+                                        <p>15</p>
+                                    </td>
+                                </tr>
+                                <tr class="collaborator">
+                                    <td class="info">
+                                        <img src="collaborator2.jpg" alt="Collaborator 2">
+                                        <p class="name">Sarah</p>
+                                    </td>
+                                    <td class="tasks-completed">
+                                        <p>10</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/dashboard.js"></script>
+</body>
+
+</html>
